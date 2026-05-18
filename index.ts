@@ -18,5 +18,8 @@ export function getCommitVersion(options?: { dateFormat: string }): string {
 export async function changeBotBio(client: Client, bio: string, options?: { commitDateOption: string}): Promise<boolean> {
   if (!client.application) throw new Error("Client application is not available.");
   const commitVersion = getCommitVersion(options?.commitDateOption ? { dateFormat: options.commitDateOption } : undefined);
-  return !!await client.application.edit({ "description": bio.replace("{commitVersion}", commitVersion) });
+  return client.application.edit({ "description": bio.replace("{commitVersion}", commitVersion) }).then(() => true).catch((error: unknown) => {
+    throw new Error(`Error occurred while changing bot bio: ${error}`);
+    return false;
+  });
 }
