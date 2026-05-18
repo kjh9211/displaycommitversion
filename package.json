@@ -1,6 +1,6 @@
 {
   "name": "displaycommitversion",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Discord bot utility to display git commit version in bot bio",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
