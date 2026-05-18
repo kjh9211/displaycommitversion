@@ -20,6 +20,5 @@ export async function changeBotBio(client: Client, bio: string, options?: { comm
   const commitVersion = getCommitVersion(options?.commitDateOption ? { dateFormat: options.commitDateOption } : undefined);
   return client.application.edit({ "description": bio.replace("{commitVersion}", commitVersion) }).then(() => true).catch((error: unknown) => {
     throw new Error(`Error occurred while changing bot bio: ${error}`);
-    return false;
   });
 }
