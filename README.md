@@ -16,7 +16,7 @@ npm install displaycommitversion
 
 | 파라미터 | 타입 | 기본값 | 설명 |
 |---------|------|--------|------|
-| `options.dateFormat` | `string` | `"%cd"` | git log 날짜 포맷 |
+| `options.dateFormat` | `string` | `"%ad"` | git log 날짜 포맷 |
 
 **반환값:** 커밋 버전 문자열. git 실행 실패 시 `"unknown"` 반환.
 
