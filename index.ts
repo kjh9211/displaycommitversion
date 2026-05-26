@@ -4,7 +4,7 @@ import { Client } from "discord.js";
 export function getCommitVersion(options?: { dateFormat: string }): string {
     try {
         const format = options?.dateFormat || "%h";
-        return execSync(`git log -1 --format=${format} --date=iso`).toString().trim();
+        return execSync(`git log -1 --format="${format}" --date=iso`).toString().trim();
     } catch {
         return "unknown";
     }
