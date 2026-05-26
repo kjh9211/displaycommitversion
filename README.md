@@ -14,9 +14,9 @@ npm install displaycommitversion
 
 최신 git 커밋 정보를 가져옵니다.
 
-| 파라미터 | 타입 | 기본값 | 설명 |
-|---------|------|--------|------|
-| `options.dateFormat` | `string` | `"%ad"` | git log 날짜 포맷 |
+| 파라미터             | 타입     | 기본값 | 설명              |
+| -------------------- | -------- | ------ | ----------------- |
+| `options.dateFormat` | `string` | `"%h"` | git log 날짜 포맷 |
 
 **반환값:** 커밋 버전 문자열. git 실행 실패 시 `"unknown"` 반환.
 
@@ -34,11 +34,11 @@ const customVersion = getCommitVersion({ dateFormat: "%h" });
 
 Discord 봇의 바이오를 커밋 버전 정보와 함께 업데이트합니다.
 
-| 파라미터 | 타입 | 설명 |
-|---------|------|------|
-| `client` | `Client` | discord.js Client 인스턴스 |
-| `bio` | `string` | 설정할 바이오 텍스트. `{commitVersion}` 플레이스홀더 사용 가능 |
-| `options.commitDateOption` | `string` | 커밋 버전의 날짜 포맷 (선택) |
+| 파라미터                   | 타입     | 설명                                                           |
+| -------------------------- | -------- | -------------------------------------------------------------- |
+| `client`                   | `Client` | discord.js Client 인스턴스                                     |
+| `bio`                      | `string` | 설정할 바이오 텍스트. `{commitVersion}` 플레이스홀더 사용 가능 |
+| `options.commitDateOption` | `string` | 커밋 버전의 날짜 포맷 (선택)                                   |
 
 **반환값:** `Promise<boolean>` — 성공 시 `true`, 실패 시 `false`.
 
